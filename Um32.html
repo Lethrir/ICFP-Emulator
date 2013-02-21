@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
+                    "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Um32 Emulator</title>
+</head>
+<body id="body">
+    <h1>Um32 Emulator</h1>
+    <div id="registers">
+        <span id="a"></span>
+        <span id="b"></span>
+        <span id="c"></span>
+        <span id="d"></span>
+        <span id="e"></span>
+        <span id="f"></span>
+        <span id="g"></span>
+        <span id="h"></span>
+        <span>Platters:</span><span id="platters"></span>
+    </div>
+    <div id="commands">
+        <input type="textbox" id="regA" />
+        <input type="textbox" id="regB" />
+        <input type="textbox" id="regC" />
+        <input type="textbox" id="regD" />
+        <button id="btnAssignRegisters" onclick="assignRegisters();">Assign Registers</button>
+        <button id="btnLoadRom" onclick="loadSandmark();">Load Sandmark</button>
+        <button id="btnLoadCodex" onclick="loadCodex();">Load Codex</button>
+        <button onclick="loadUm();">Load Um</button>
+        <button id="btnOutput" onclick="Um32._op0();">Op0: Conditional Move</button>
+        <button id="btnOutput" onclick="Um32._op1();">Op1: Array Index</button>
+        <button id="btnOutput" onclick="Um32._op2();">Op2: Array Ammendment</button>
+        <button id="btnOutput" onclick="Um32._op3();">Op3: Addition</button>
+        <button id="btnOutput" onclick="Um32._op4();">Op4: Multiplication</button>
+        <button id="btnOutput" onclick="Um32._op5();">Op5: Division</button>
+        <button id="btnOutput" onclick="Um32._op6();">Op6: Not-And</button>
+        <button id="btnOutput" onclick="Um32._op7();">Op7: Halt</button>
+        <button id="btnOutput" onclick="Um32._op8();">Op8: Allocation</button>
+        <button id="btnOutput" onclick="Um32._op9();">Op9: Abandonment</button>
+        <button id="btnOutput" onclick="Um32._op10();">Op10: Output</button>
+        <button id="btnOutput" onclick="Um32._op11();">Op11: Input</button>
+        <button id="btnOutput" onclick="Um32._op12();">Op12: Load Program</button>
+        <button id="btnOutput" onclick="Um32._op13();">Op13: Orthography</button>
+    </div>
+    <div id="console"></div>
+    
+    <script type="text/javascript" src="Console.js"></script>
+    <script type="text/javascript" src="Um32.js"></script>
+    <script type="text/javascript" src="BinFileReader.js"></script>
+    <script type="text/javascript">
+        function assignRegisters() {
+            Um32._register.a = 3;
+            Um32._register.b = 6;
+            Um32._register.c = 9;
+            Um32._register.d = 12;
+        };
+        
+        function loadUm(){
+            loadUrl('http://www.boundvariable.org/um.um');
+        }
+        
+        function loadCodex(){
+            var url = "http://www.boundvariable.org/codex.umz";
+            loadUrl(url);
+        }
+        
+        function loadSandmark(){
+            var url = 'http://www.boundvariable.org/sandmark.umz';
+            loadUrl(url);
+        }
+        function loadUrl(url){
+            var b = new BinFileReader(url);
+            var rom = b.readString(b.getFileSize(), 0);
+            Um32.start(rom);
+        };
+    </script>
+</body>
+</html>

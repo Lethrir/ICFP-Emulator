@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
+                    "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <link rel="stylesheet" href="http://code.jquery.com/qunit/git/qunit.css" type="text/css" media="screen" />
+<script type="text/javascript" src="http://code.jquery.com/qunit/git/qunit.js"></script>
+<script type="text/javascript" src="Um32.js"></script>
+
+  <script type="text/javascript">
+  $(document).ready(function(){
+    
+module("Registers");
+    
+test("register a", function() {
+    var expected = 123;
+    Um32._register.a = expected;
+    equal(Um32._register.a, expected);
+});
+    
+test("register b", function() {
+    var expected = 123;
+    Um32._register.b = expected;
+    equal(Um32._register.b, expected);
+});
+    
+test("register c", function() {
+    var expected = 123;
+    Um32._register.c = expected;
+    equal(Um32._register.c, expected);
+});
+    
+test("register d", function() {
+    var expected = 123;
+    Um32._register.d = expected;
+    equal(Um32._register.d, expected);
+});
+    
+test("register e", function() {
+    var expected = 123;
+    Um32._register.e = expected;
+    equal(Um32._register.e, expected);
+});
+    
+test("register f", function() {
+    var expected = 123;
+    Um32._register.f = expected;
+    equal(Um32._register.f, expected);
+});
+    
+test("register g", function() {
+    var expected = 123;
+    Um32._register.g = expected;
+    equal(Um32._register.g, expected);
+});
+    
+test("register h", function() {
+    var expected = 123;
+    Um32._register.h = expected;
+    equal(Um32._register.h, expected);
+});
+
+module("Operations");
+
+test("Op0", function(){
+    var expected = 123;
+    Um32._register.b = expected;
+    Um32._register.c = 1;
+    Um32._op0();
+    equal(Um32._register.a, expected);
+});
+
+test("Op1", function(){
+    
+});
+
+test("Op2", function(){
+
+});
+
+test("Op3", function(){
+    var expected = 150;
+    Um32._register.b = 100;
+    Um32._register.c = 50;
+    Um32._op3();
+    equal(Um32._register.a, expected);
+});
+
+test("Op4", function(){
+
+});
+
+test("Op5", function(){
+
+});
+
+test("Op6", function(){
+
+});
+
+test("Op7", function(){
+
+});
+
+test("Op8", function(){
+
+});
+
+test("Op9", function(){
+
+});
+
+test("Op10", function(){
+
+});
+
+test("Op11", function(){
+
+});
+
+test("Op12", function(){
+
+});
+
+test("Op13", function(){
+
+});
+
+  });
+  </script>
+  
+</head>
+<body>
+  <h1 id="qunit-header">QUnit example</h1>
+ <h2 id="qunit-banner"></h2>
+ <div id="qunit-testrunner-toolbar"></div>
+ <h2 id="qunit-userAgent"></h2>
+ <ol id="qunit-tests"></ol>
+ <div id="qunit-fixture">test markup, will be hidden</div>
+</body>
+</html>
